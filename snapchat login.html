@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapchat Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+            color: #000;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #fbff14;
+            padding: 10px;
+            text-align: right;
+        }
+
+        .header img {
+            max-width: 100%;
+            height: 70px;
+        }
+
+        .login-container {
+            marfgin-top: -40px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .welcome-text {
+            font-size: 24px;
+            font-weight: bolder;
+            margin-bottom: 20px;
+        }
+
+        .google-login-btn {
+            background-color: black;
+            color: yellow;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bolder;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 60%;
+            margin-bottom: 20px;
+        }
+
+        .trouble-text {
+            font-size: 12px;
+            font-weight: bolder;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .or {
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: bolder;
+            color: lightgrey;
+        }
+
+        .input-container {
+            margin-bottom: 20px;
+            text-align: left;
+            width: 70%;
+        }
+
+        .input-field {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid black;
+            padding: 15px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .input-field:focus::placeholder {
+            transform: translateY(-20px);
+            font-size: 10px;
+        }
+
+        .forgot-password, a {
+            text-align: right;
+            font-size: 12px;
+            margin-bottom: 20px;
+            color: blue;
+            text-decoration: none;
+        }
+
+        .login-btn {
+            width: 60%;
+            background-color: lightgrey;
+            color: #fff;
+            font-size: 16px;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .signup {
+            font-size: 12px;
+            color: #808080;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <img src="snapchat-logo.png" alt="Snapchat Logo">
+    </div>
+
+    <!-- Login Container -->
+    <div class="login-container">
+
+        <!-- Welcome Back Text -->
+        <div class="welcome-text">Welcome Back!</div>
+
+        <!-- Log in via Google Button -->
+        <button class="google-login-btn">Log In via Google</button>
+
+        <!-- Trouble Logging In Text -->
+        <div class="trouble-text">Trouble Logging In?</div>
+
+        <div class="or">OR</div>
+
+        <!-- Input Fields Container -->
+        <div class="input-container">
+
+            <!-- Username Input -->
+            <input type="text" class="input-field" placeholder="USERNAME OR EMAIL" oninput="checkFields();" />
+
+            <!-- Password Input -->
+            <input type="password" class="input-field" placeholder="PASSWORD" oninput="checkFields();"/>
+            <div class="forgot-password"><a href="#" style="text-decoration: none;">Forgot password?</a></div>
+        </div>
+        <button class="login-btn"><b>Log In</b></button>
+
+        <!-- Signup -->
+        <div class="signup"><b>Sign up</b> if you don't have an account</div>
+
+    </div>
+
+    <script>
+        function checkFields() {
+            // Add logic to change background color based on input fields
+            var username = document.querySelector('.input-field[type="text"]').value;
+            var password = document.querySelector('.input-field[type="password"]').value;
+
+            if (username !== '' && password !== '') {
+                document.querySelector('.login-btn').style.backgroundColor = 'yellow';
+                document.querySelector('.login-btn').style.color = '#000';
+            } else {
+                document.querySelector('.login-btn').style.backgroundColor = 'lightgray';
+                document.querySelector('.login-btn').style.color = '#fff';
+            }
+        }
+    </script>
+</body>
+</html>
